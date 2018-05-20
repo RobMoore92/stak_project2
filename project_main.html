@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+    <script src="resources/js/project_main.js"></script>
+    <title>STAK | Study Tool</title>
+    <script src="resources/js/localStorage.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="venders/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Style -->
+    <link href='resources/css/main.css' rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+</head>
+
+
+<body class="bg-light" onload=loadProject()>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">
+            <div class="row">
+                <div class="small_title col-xs-12">
+                    <h1>Stak <span class="thin_title"><span class="vertical_line">|</span>Study Tool</span>
+                    </h1>
+                </div>
+
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="new_project.html">new<span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="open_project.html">open <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="save()">save <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="file:///">save as <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="scanner_tool.html">scan <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="project_main.html">project <span class="sr-only"></span></a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <p id=title1 class="small"></p>
+        <p id="due_date1" class="small"></p>
+        <div class="line-break"></div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-3-sm mx-auto nav-labels">
+            <img src="resources/img/requirements.svg" onclick="requirements()" width="50px">
+                <p class="nav-labels">REQUIREMENTS</p>
+            </div>
+            <div class="col-3-sm mx-auto nav-labels">
+                          <img src="resources/img/calendar.svg" onclick="calendar()" width="50px">
+                <p class="nav-labels">CALENDAR</p>
+            </div> 
+            <div class="col-3-sm mx-auto nav-labels">
+                          <img src="resources/img/tools.svg" onclick="tools_hide()" width="50px">
+                              <p class="nav-labels">TOOLS</p>
+            </div>
+            <div class="col-3-sm mx-auto nav-labels">
+      
+   <img src="resources/img/snippets.svg" onclick="snippets_hide()" width="50px">
+                                    <p class="nav-labels">MATERIALS</p>
+
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <div id="tool_popup">
+    <div class="container">
+        <div class="row" >
+            <div class="col-3-sm mx-auto">
+                <button type="button" onclick="summarize()" class="btn top-btn">Summarize</button>
+            </div>
+            <div class="col-3-sm mx-auto">
+                <button type="button" class="btn top-btn" onclick="plagiarismCheck()" data-toggle="modal" data-target="#plagiarism">Plagiarism Check</button>
+            </div>
+            <div class="col-3-sm mx-auto">
+       
+                <button type="button" class="btn top-btn" onclick="addReferenceText()" data-toggle="modal" data-target="#addReference"><audio src="resources/audio/ding.mp3" id="ding"></audio>Add Reference</button>
+            </div>
+            <div class="col-3-sm mx-auto">
+                <button type="button" class="btn top-btn" onclick="retrieveScan()">Retrieve Scan</button>
+            </div>
+        </div>
+         </div>
+        </div>
+    
+     <div id="snippets_popup">
+    <div class="container">
+        <div class="row" >
+            <div class="col-4-sm mx-auto">
+                <button type="button" class="btn top-btn" data-toggle="modal" data-target="#referenceModal" onclick="referenceLoad()">Reference List</button>
+            </div>
+            <div class="col-4-sm mx-auto">
+                <button type="button" class="btn top-btn" data-toggle="modal" data-target="#plagiarismModal">Plagiarism Warnings</button>
+            </div>
+            <div class="col-4-sm mx-auto">
+                <button type="button" class="btn top-btn" onclick="addReferenceText()" data-toggle="modal" data-target="#summarized-texts">Summarized Texts</button>
+            </div>
+        </div>
+         </div>
+        </div>
+    <div class="modal fade" id="plagiarism" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content mt-3">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Warning!</h3> 
+                     <audio src="resources/audio/warning.mp3" id="warning"></audio>
+                    <div class="col-10">
+                        <ul>
+                            <li class="small" id="plagiarism-url"><a href="https://enginess.io/insights/6-principles-design-la-donald-norman">https://enginess.io/insights/6-principles-design-la-donald-norman</a></li>
+                            <li class="small" id="plagiarism-input">Norman outlines six key principles: visibility, feedback, constraints, mapping, consistency and affordances.</li>
+                        </ul>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    <div class="modal fade" id="addReference" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content mt-3">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add reference</h5> <label for="example-text-input" class="col-2 col-form-label"></label>
+                    <div class="col-10">
+                        <input class="form-control" id="urlInput" type="text" value="" placeholder="Enter reference URL here" id="example-text-input">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-secondary" onclick="addReferenceUrl()" data-dismiss="modal">Save</button>
+ 
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <!-- Modal -->
+            <div class="modal fade" id="referenceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content mt-3">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Reference List</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <ul>
+                                <li class="h4" id="reference-url"></li>
+                                <li class="lead" id="reference-text"></li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+   <div class="modal fade" id="plagiarismModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content mt-3">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5> <label for="example-text-input" class="col-2 col-form-label">Warning!</label>
+                        <div class="col-10">
+                        <ul>
+                                <li class="small" id="plagiarism-url"><a href="https://enginess.io/insights/6-principles-design-la-donald-norman">https://enginess.io/insights/6-principles-design-la-donald-norman</a></li>
+                                <li class="small" id="plagiarism-input">Norman outlines six key principles: visibility, feedback, constraints, mapping, consistency and affordances.</li>
+                            </ul>
+                        </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button"class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+                        <div class="modal fade" id="summarized-texts" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content mt-3">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Summarized Texts</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <ul>
+                                <li class="lead" id="reference-url"> There are two types of auctions: those in which the price starts out low and is gradually raised, and those in which the price starts out high and is gradually lowered. <br><br> Auctions can be conducted in open or closed formats. <br> <br> Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount. <br><br>Auctions can be conducted in open or closed formats. <br><br>Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount."</li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="modal fade" id="summarized-texts" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content mt-3">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5> <label for="example-text-input" class="col-2 col-form-label">Summarized:</label>
+                        <div class="col-10">
+                        <ul>
+                                <li class="small" id="summary-text">"SUMMARIZED TEXT: There are two types of auctions: those in which the price starts out low and is gradually raised, and those in which the price starts out high and is gradually lowered. <br><br> Auctions can be conducted in open or closed formats. <br> <br> Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount. <br><br>Auctions can be conducted in open or closed formats. <br><br>Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount."</li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+            </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12" id="insert_nav">
+                <iframe id="calendar_hide" src="https://calendar.google.com/calendar/embed?showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=180&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=fl7qel7q2h208cag30gqpg4pq4%40group.calendar.google.com&amp;color=%23182C57&amp;ctz=Australia%2FDarwin" style="border:solid 1px #777" margin-bottom="10px" width="250" height="180" frameborder="0" scrolling="no"></iframe>
+                <ul class="view_toggle" id='req_list'></ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+    <div id="summarise-card">
+        <h2>Summarised Results</h2>
+        <p id="summarised-results"></p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="main_screen">
+                    <div id='fake_textarea' contenteditable><p id="textbox"><span class="bold">Example Summary - Highlight the text and press Summarize in the Tools section.</span><br><br>
+                        There are two types of auctions: those in which the price starts out low and is gradually raised, and those in which the price starts out high and is gradually lowered. Both auction types have variants, such as a "buyout option" in which a customer is guaranteed an object if he/she is willing to pay a high price. Moreover, auctions can be conducted in open or closed formats. In closed formats, participants don't know how much others are willing to pay for an object since they use sealed envelopes or some secret method to make their bids. Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount.<br><br><span class="bold">Plagurism Example:</span><br><br><span id="plag">Norman outlines six key principles: visibility, feedback, constraints, mapping, consistency and affordances.</span></p>
+                
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+            <div class="col-sm-12 fixed-bottom">
+                <img class="float-right" src="resources/img/faq.svg" data-toggle="modal" data-target="#index-help">
+            </div>
+        </div>
+
+        <div class="modal fade" id="index-help" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content mt-3">
+                    <div class="modal-header">
+                        <h4 class="modal-title">The Project Page</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="lead">Here is the project page. <br><br>It allows you to write your assignment and use various tools to help you along the way! <br><br>1.  Check your project's requirements<br><br>2. Use the Calendar to find important dates<br><br>3. Use the tools to Summarize, Add a Reference, Check for Plagiarism or import your Scanned File<br><br>4. Import the snippets collected from using the tools such as your projects saved references, summaries or a list of plagiarism warnings found. 5. You can also head to the scan page to import your images and insert the text into your project!
+            
+                            
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="resources/js/top_nav.js"></script>
+</body>
+
+</html>

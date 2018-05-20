@@ -1,0 +1,464 @@
+bdy {
+    width: 360px;
+    margin: 0 auto;
+    margin-top: 200px
+}
+.st-dtitle {
+    font-size: 1em;
+}
+.spacing {
+    margin-top: 35vh;
+}
+
+.lead {
+    color: #242424;
+}
+
+/* main page */
+
+.save-margin {
+    position: absolute;
+    right: 10px;
+}
+
+#recent-project {
+    padding-top: 10px;
+}
+
+.main_title {
+    padding-top: 10px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+#submit-line-break {
+    margin-top: 20px;
+}
+
+.main_title h1 {
+    font-size: 48px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.main_title p {
+    margin-top: -15px;
+    letter-spacing: 8px;
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+.new_project,
+.open_project {
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.help {
+    text-align: right;
+    width: 50px;
+    padding: 5px;
+}
+
+h3 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.thin_text {
+    font-weight: 100;
+}
+
+.new_project .card,
+.open_project .card {
+    height: 100px;
+    border: 3px black solid;
+    border-radius: 10px;
+    line-height: 100px;
+}
+
+.new_project p,
+.open_project p {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1em;
+    font-weight: 600
+}
+
+#insert_nav {
+    margin-top: 10px;
+}
+
+.line-break {
+    height: 1px;
+    width: 100%;
+    background-color: black;
+}
+
+.recent_projects {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+#green-text {
+    color: yellowgreen;
+    font-weight: 600;
+}
+.warning {
+    color: red;
+}
+
+iframe {
+    margin-top: 20px;
+    margin: 0 auto;
+}
+
+
+li {
+
+}
+
+nav-bar li {
+    display: inline-block;
+    display: inline-block;
+}
+
+.vertical_line {
+    padding-right: 5px;
+}
+
+.small_title img {
+    margin: 0 auto;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#calendar_hide {
+    display: none;
+    margin: 0 auto;
+
+}
+
+#insert_nav {}
+
+.popup {
+    width: 200px;
+}
+
+#tool_popup {
+    display: none;
+    width: 100px;
+
+}
+
+#snippets_popup {
+    display: none;
+    width: 100px;
+}
+
+.small_title h1 {
+    padding-top: 12px;
+    padding-left: 15px;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+}
+
+.center-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thin_title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
+
+.navbar-nav {
+    float: none;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    padding-right: 11%;
+}
+
+.navbar-nav > li {
+    font-size: 11px;
+    display: inline-block;
+    float: none;
+    padding: 0px 5px 0px 5px;
+}
+
+.requirements {
+    display: block;
+}
+
+.float-right {
+    width: 50px;
+    padding-bottom: 20px;
+}
+
+.btn-light {
+    width: 100%;
+    display:
+}
+
+
+.btn-layout {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 170px;
+    margin-bottom: 20px;
+}
+
+.navbar-collapse {
+    margin-top: -15px;
+}
+
+
+
+.btn-outline-dark {}
+
+.title {
+    margin-top: 50px;
+}
+
+
+.savebtn {
+    text-align: right;
+}
+
+.display-4 {
+    font-size: 1.5em;
+
+}
+
+#textbox {
+    margin-top: 10px;
+}
+
+.drop-down-card {
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 10px;
+}
+
+select,
+.form-control {
+    display: inline;
+}
+
+#req_list {
+    padding: 10px;
+    display: none;
+}
+
+.list-group-item {
+    margin-top: 5px;
+}
+
+.mx-auto {
+    margin-top: 20px;
+}
+
+select {
+    float: right;
+}
+
+.nav-btn {
+    margin-top: 20px;
+    font-size: 12px;
+    margin: 10px;
+    margin-bottom: 0px;
+}
+
+f .list-group {}
+
+.tool_card h2 {
+    padding: 5px 0px 5px 0px;
+    font-size: 13px;
+    font-weight: 100;
+    text-align: center;
+    border: 1px solid;
+}
+
+.tool_card {
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+
+
+#reference-hide {
+    display: none;
+}
+
+.main_screen {
+    height: 60vh;
+    margin-top: 10px;
+    background-color: white;
+    border: 3px black solid;
+    overflow-y: scroll;
+}
+
+br {
+    line-height: 20px;
+}
+
+#fake_textarea {
+    width: 100%;
+    font-size: 12px;
+    background-image: linear-gradient(transparent, transparent 19px, #E7EFF8 0px);
+    background-size: 100% 20px;
+    padding: 12px 10px 5px 10px;
+    background-attachment: local;
+    resize: none;
+    line-height: 20px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#urlInput {
+    width: 70%;
+}
+
+.list-group {
+    width: 100%;
+}
+
+#imageholder {
+    min-height: 400px;
+    width: 100%;
+    border: 1px solid black;
+    margin: 20px;
+}
+
+#textbox {
+    height: 60vh;
+}
+
+.main-bar {
+    height: 20px;
+    border-color: black;
+    border-top: solid 1px;
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.top-btn {
+    font-size: 10px;
+    padding: 5px;
+}
+
+.top {
+    width: 100%;
+}
+
+.word_tools {
+    margin: 0px;
+}
+
+.word_tools {
+    padding-left: 15px;
+}
+
+.drop-down-card {
+    display: none;
+}
+
+.camera {
+    height: 400px;
+
+
+
+    text-align: center;
+}
+
+.camera img {
+    margin-top: 20px;
+    height: 350px;
+
+}
+
+#thumb {
+    height: 50px;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+#scan_thumb {
+    padding: 15px;
+}
+
+/*  Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+.new_project .card, .open_project .card {
+        height: 200px;
+        font-size: 1.4em;
+        padding-top: 40px;
+    }
+    
+    .recent {
+        margin-top: 50px;
+    }
+    
+
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+
+    .new_project .card, .open_project .card {
+        height: 300px;
+        font-size: 2em;
+        padding-top: 90px;
+    }
+        .recent {
+        margin-top: 70px;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+    
+a {font-size: 1.5em}
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .navbar a {font-size: 2.5em;
+    margin: 0px 10px 0px 10px;}
+    .navbar-nav {
+    float: none;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+}
+}
