@@ -10,6 +10,10 @@ bdy {
     margin-top: 35vh;
 }
 
+.nav-labels {
+    text-align: center;
+    font-size: 10px;
+}
 .lead {
     color: #242424;
 }
@@ -87,21 +91,27 @@ p {
 
 .new_project .card,
 .open_project .card {
-    height: 100px;
+    margin-top: 70px;
+    margin: 0 auto;
+    height: 60px;
     border: 1px black solid;
-    border-radius: 10px;
-    line-height: 100px;
+    border-radius: 3px;
+    line-height: 60px;
+       box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 #logo{
-    width: 150px;
-    margin-top: 10px;
+    width: 200px;
+    margin-top: 30px;
+
+    
 }
 .new_project p,
 .open_project p {
     text-align: center;
     vertical-align: middle;
     font-size: 1em;
-    font-weight: 600
+    font-weight: 600;
+    
 }
 
 #insert_nav {
@@ -113,9 +123,12 @@ p {
     width: 100%;
     background-color: black;
 }
-
+.recent {
+        margin-top: 30px;
+}
 .recent_projects {
     margin-bottom: 20px;
+
 }
 
 h2 {
@@ -203,12 +216,14 @@ nav-bar li {
     display: block;
     text-align: center;
     padding-right: 11%;
+    font-size: 12px;
 }
 
 .navbar-nav > li {
-    font-size: 11px;
+    font-size: 14px;
     display: inline-block;
     float: none;
+    font-weight: 100;
     padding: 0px 5px 0px 5px;
 }
 
@@ -436,9 +451,10 @@ ul {
 @media (min-width: 768px) {
 
     .new_project .card, .open_project .card {
-        height: 300px;
+        height: 230px;
         font-size: 2em;
         padding-top: 90px;
+        border-radius: 5px
     }
         .recent {
         margin-top: 70px;
@@ -452,19 +468,20 @@ ul {
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 
-    
-a {font-size: 1.5em}
-}
+    #logo {
+        width: 300px;
+    }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    .navbar a {font-size: 2.5em;
-    margin: 0px 10px 0px 10px;}
+    .navbar a {font-size: 2em;
+    margin: 0px 40px 0px 40px;}
     .navbar-nav {
     float: none;
     margin: 0 auto;
     display: block;
     text-align: center;
+
 }
 }
 }
