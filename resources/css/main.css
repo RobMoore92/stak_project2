@@ -106,6 +106,9 @@ p {
 
     
 }
+.save-btn {
+    margin-top: 50px;
+}
 .top-btn {
     padding-left: 0px;
     padding-right: 0px;
@@ -198,6 +201,9 @@ nav-bar li {
 
 }
 
+#urlInput {
+    font-size: 12
+}
 
 .popup {
     width: 200px;
