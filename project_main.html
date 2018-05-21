@@ -10,7 +10,7 @@
     <script src="resources/js/project_main.js"></script>
     <title>STAK | Study Tool</title>
     <script src="resources/js/localStorage.js"></script>
-        <link href='venders/css/animate.css' rel="stylesheet">
+    <link href='venders/css/animate.css' rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="venders/css/bootstrap/bootstrap.min.css" rel="stylesheet">
 
@@ -22,11 +22,11 @@
 
 
 <body class="bg-light" onload=loadProject()>
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.html">
             <div class="row">
                 <div class="small_title col-xs-12">
-                    <h1 class = "animated slideInLeft">Stak <span class="thin_title animated zoomInLeft"><span class="vertical_line animated zoomInLeft">|</span>Study Tool</span>
+                    <h1 class="animated slideInLeft">Stak <span class="thin_title animated zoomInLeft"><span class="vertical_line animated zoomInLeft">|</span>Study Tool</span>
                     </h1>
                 </div>
 
@@ -53,7 +53,7 @@
             </ul>
         </div>
     </nav>
-   
+
     <div class="container">
         <p id=title1 class="small">Title: </p>
         <p id="due_date1" class="small">Due Date: </p>
@@ -65,61 +65,53 @@
             <div class="col-3-sm mx-auto nav-labels animated" id="nav-label1">
                 <p>REQUIREMENTS</p>
                 <img src="resources/img/requirements.svg" onclick="requirements()" width="50px">
-
             </div>
             <div class="col-3-sm mx-auto nav-labels animated" id="nav-label2">
-                 <p>CALENDAR</p>
+                <p>CALENDAR</p>
                 <img src="resources/img/calendar.svg" onclick="calendar()" width="50px">
-
             </div>
             <div class="col-3-sm mx-auto nav-labels animated" id="nav-label3">
-                 <p>TOOLS</p>
+                <p>TOOLS</p>
                 <img src="resources/img/tools.svg" onclick="tools_hide()" width="50px">
-
             </div>
             <div class="col-3-sm mx-auto nav-labels animated" id="nav-label4">
-               <p>MATERIALS</p>
+                <p>MATERIALS</p>
                 <img src="resources/img/snippets.svg" onclick="snippets_hide()" width="50px">
-
-
             </div>
         </div>
     </div>
-
-
-
     <div id="tool_popup">
         <div class="container">
-            <div class="row">
-                <div class="col-3-sm mx-auto">
-                    <button type="button" onclick="summarize()" class="btn top-btn">Summarize</button>
+            <div class="d-flex row justify-content-center">
+                <div class="p-2">
+                    <button type="button" onclick="summarize()" class="btn top-btn">SUMMARIZE</button>
                 </div>
-                <div class="col-3-sm mx-auto">
-                    <button type="button" class="btn top-btn" onclick="plagiarismCheck()" data-toggle="modal" data-target="#plagiarism">Plagiarism Check</button>
+                <div class="p-2"> 
+                    <button type="button" class="btn top-btn" onclick="plagiarismCheck()" data-toggle="modal" data-target="#plagiarism">PLAGIARISM CHECK</button>
                 </div>
-                <div class="col-3-sm mx-auto">
-
-                    <button type="button" class="btn top-btn" onclick="addReferenceText()" data-toggle="modal" data-target="#addReference"><audio src="resources/audio/ding.mp3" id="ding"></audio>Add Reference</button>
+                <div class="p-2">
+                    <button type="button" class="btn top-btn" onclick="addReferenceText()" data-toggle="modal" data-target="#addReference"><audio src="resources/audio/ding.mp3" id="ding"></audio>ADD REFERENCE</button>
                 </div>
-                <div class="col-3-sm mx-auto">
-                    <a href="/scanner_tool.html">
-                    <button type="button" class="btn top-btn" onclick="retrieveScan()">Scan</button></a>
+                <div class="p-2"> <a href="/scanner_tool.html">
+                    <button type="button" class="btn top-btn" onclick="retrieveScan()">SCAN</button></a>
                 </div>
             </div>
         </div>
     </div>
+
 
     <div id="snippets_popup">
         <div class="container">
-            <div class="row">
-                <div class="col-4-sm mx-auto">
-                    <button type="button" class="btn top-btn" data-toggle="modal" data-target="#referenceModal" onclick="referenceLoad()">Reference List</button>
+            <div class="d-flex row justify-content-center">
+                <div class="p-2"> <button type="button" class="btn top-btn" data-toggle="modal" data-target="#referenceModal" onclick="referenceLoad()">REFERENCES</button>
                 </div>
-                <div class="col-4-sm mx-auto">
-                    <button type="button" class="btn top-btn" data-toggle="modal" data-target="#plagiarismModal">Plagiarism Warnings</button>
+                <div class="p-2"> <button type="button" class="btn top-btn" data-toggle="modal" data-target="#plagiarismModal">PLAGIARISE LIST</button>
                 </div>
-                <div class="col-4-sm mx-auto">
-                    <button type="button" class="btn top-btn" onclick="addReferenceText()" data-toggle="modal" data-target="#summarized-texts">Summarized Texts</button>
+                <div class="p-2"> <button type="button" class="btn top-btn" onclick="addReferenceText()" data-toggle="modal" data-target="#summarized-texts">SUMMARIES </button>
+                </div>
+                <div class="p-2"> <a href="/scanner_tool.html">
+                     <button type="button" class="btn top-btn" onclick="retrieveScan()">GET SCAN</button>
+                </a>
                 </div>
             </div>
         </div>
@@ -169,7 +161,7 @@
     <!-- Modal -->
     <div class="modal fade" id="referenceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content mt-3">
+            <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Reference List</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -253,15 +245,21 @@
         </div>
     </div>
     <div class="container">
-        <div id="summarise-card">
-            <h2>Summarised Results</h2>
-            <p id="summarised-results"></p>
+        <div id="mini-screen">
+            <div id='fake_mini'>
+                <div class="close">
+                    <button onclick="hide_mini()"><img src="resources/img/cancel.svg"  onclick="close()" id="close" width="20px"></button>
+                </div>
+                <h4 id="mini-header"></h4>
+                <p id="mini-para"></p>
+
+            </div>
         </div>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <div class="main_screen">
+                <div class="main_screen mt-3">
                     <div id='fake_textarea' contenteditable>
                         <p id="textbox"><span class="bold">Example Summary - Highlight the text and press Summarize in the Tools section.</span><br><br> There are two types of auctions: those in which the price starts out low and is gradually raised, and those in which the price starts out high and is gradually lowered. Both auction types have variants, such as a "buyout option" in which a customer is guaranteed an object if he/she is willing to pay a high price. Moreover, auctions can be conducted in open or closed formats. In closed formats, participants don't know how much others are willing to pay for an object since they use sealed envelopes or some secret method to make their bids. Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount.<br><br><span class="bold">Plagurism Example:</span><br><br><span id="plag">Norman outlines six key principles: visibility, feedback, constraints, mapping, consistency and affordances.</span></p>
 
@@ -297,6 +295,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

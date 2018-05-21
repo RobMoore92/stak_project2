@@ -17,9 +17,7 @@
 a.navbar-brand {
   
 }
-.test {
-    font-size: 4em;
-}
+
 /* main page */
 
 .save-margin {
@@ -93,6 +91,7 @@ p {
 
 .new_project .card,
 .open_project .card {
+    width: 90%;
     margin-top: 70px;
     margin: 0 auto;
     height: 60px;
@@ -102,15 +101,20 @@ p {
        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 #logo{
-    width: 200px;
-    margin-top: 30px;
+    width: 150px;
+    margin-bottom: 10px;
 
     
 }
-
-#insert_nav {
-    padding-top: 10px;
+.top-btn {
+    padding-left: 0px;
+    padding-right: 0px;
+    font-family: 'Roboto', sans-serif;
 }
+.spaced {
+    margin: 1%;
+}
+
 .new_project p,
 .open_project p {
     text-align: center;
@@ -120,11 +124,7 @@ p {
     
 }
 .top-btn {
-    min-width: 100px;
-        margin-left: 5%;
-    margin-right: 5%;
-}
-#insert_nav {
+min-width: 70px;
 }
 
 .line-break {
@@ -144,6 +144,15 @@ h2 {
     font-size: 1.5em;
 }
 
+#fake_mini img {
+
+
+}
+
+#fake_mini {
+    
+}
+
 #green-text {
     color: yellowgreen;
     font-weight: 600;
@@ -157,7 +166,11 @@ iframe {
     margin: 0 auto;
 }
 
-
+button {
+    background-color: white;
+    border: 0px;
+        float: right;
+}
 li {
 
 }
@@ -169,7 +182,10 @@ nav-bar li {
 .vertical_line {
     padding-right: 5px;
 }
-
+.nav-labels p{
+    font-size: 10px
+}
+}
 .small_title img {
     margin: 0 auto;
     padding: 10px;
@@ -182,7 +198,6 @@ nav-bar li {
 
 }
 
-#insert_nav {}
 
 .popup {
     width: 200px;
@@ -190,12 +205,11 @@ nav-bar li {
 
 #tool_popup {
     display: none;
-
+    font-size: 18px;
 }
 
 #snippets_popup {
     display: none;
-    width: 100px;
 }
 
 .small_title h1 {
@@ -306,7 +320,14 @@ select,
 select {
     float: right;
 }
-
+.navbar-light .navbar-toggler {
+    border:none;
+}
+#close {
+    position: inherit;
+    right: 30px;
+    
+}
 .nav-btn {
     margin-top: 20px;
     font-size: 12px;
@@ -330,23 +351,46 @@ f .list-group {}
     margin-bottom: 50px;
 }
 
+#mini_para {
+    float: left;
+}
 
 #reference-hide {
     display: none;
 }
 
 .main_screen {
+    margin-top: -10px;
     height: 60vh;
-    margin-top: 10px;
     background-color: white;
-    border: px black solid;
-    overflow-y: scroll;
+    border: 1px black solid;
+    overflow-y: scroll
+}
+
+#mini-screen {
+    margin-top: 10px;
+    display: none;
+    background-color: white;
 }
 
 br {
     line-height: 20px;
 }
 
+#insert_nav {
+    margin-top: 10px;
+}
+#fake_mini {
+        min-height: 55px;
+      width: 100%;
+    font-size: 12px;
+    background-size: 100% 20px;
+    padding: 12px 10px 5px 10px;
+    background-attachment: local;
+    resize: none;
+    line-height: 20px
+            border: 1px black solid;
+}
 #fake_textarea {
     width: 100%;
     font-size: 12px;
@@ -369,18 +413,26 @@ ul {
 .list-group {
     width: 100%;
 }
-
+.top-btn, . {
+}
 #imageholder {
     min-height: 400px;
     width: 100%;
     border: 1px solid black;
     margin: 20px;
 }
-
+.top-btn {
+    margin-top: 10px;
+    font-size: 9px;
+}
 #textbox {
     height: 60vh;
 }
 
+.p-2 {
+        margin-top: 5px;
+display: block;
+}
 .main-bar {
     height: 20px;
     border-color: black;
@@ -391,7 +443,7 @@ ul {
 }
 
 .top-btn {
-    font-size: 10px;
+    font-size: 9px;
 }
 
 .top {

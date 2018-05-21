@@ -14,27 +14,58 @@ function requirements() {
 function calendar() {
     var x = document.getElementById("calendar_hide");
     var y = document.getElementById('req_list');
+       var l1 = document.getElementById("nav-label1");
+   var l3 = document.getElementById("nav-label3");
+   var l4 = document.getElementById("nav-label4");
     y.style.display = "none";
     if (x.style.display === "block") {
         x.style.display = "none";
+                l1.classList.remove("zoomOut");
+           l4.classList.remove("zoomOut");
+           l3.classList.remove("zoomOut");
+            l1.classList.add("zoomIn");
+           l4.classList.add("zoomIn");
+           l3.classList.add("zoomIn");
 
     } else {
         x.style.display = "block";
-
+                        l1.classList.remove("zoomIn");
+           l3.classList.remove("zoomIn");
+           l4.classList.remove("zoomIn");
+           l1.classList.add("zoomOut");
+           l3.classList.add("zoomOut");
+           l4.classList.add("zoomOut");
     }
 }
 
 
 function toggler() {
     var x = document.getElementById("req_list");
-    var y = document.getElementById("calendar_hide");
+    var y = document.getElementById("insert_nav");
+    var z = document.getElementById('calendar_hide')
+           var l4 = document.getElementById("nav-label4");
+   var l2 = document.getElementById("nav-label2");
+   var l3 = document.getElementById("nav-label3");
     y.style.display = "none";
-    y.classList.add("test");
+    z.classList.add("calendar_hide");
     if (x.style.display === "block") {
         x.style.display = "none";
+         x.style.display = "none";
+                        l2.classList.remove("zoomOut");
+           l4.classList.remove("zoomOut");
+           l3.classList.remove("zoomOut");
+            l2.classList.add("zoomIn");
+           l4.classList.add("zoomIn");
+           l3.classList.add("zoomIn");
     } else {
         x.style.display = "block";
-
+        y.style.display = "block";
+                        l2.classList.remove("zoomIn");
+           l3.classList.remove("zoomIn");
+           l4.classList.remove("zoomIn");
+           l2.classList.add("zoomOut");
+           l3.classList.add("zoomOut");
+           l4.classList.add("zoomOut");
     }
 }
 
@@ -92,14 +123,14 @@ function loadProject() {
     var new_due = localStorage.getItem("due_date");
     var title = document.getElementById('title1');
     var due = document.getElementById('due_date1');
-    if (title.innerHTML === null) {
-        
+    if (new_title === "") {
+        title.innerHTML = "No title has been set";
     } else {
     title.innerHTML += new_title;
     }
     
-    if (due.innerHTML === null) {
-        due.innerHTML = ('No due date set');
+    if (new_due === "") {
+        due.innerHTML = 'No due date has been set';
     } else {
     due.innerHTML += new_due;
     }
@@ -161,7 +192,6 @@ function tools_hide() {
     } else {
         x.style.display = "inline";
         y.style.display = "none";
-   l1.classList.add("animated");
                         l1.classList.remove("zoomIn");
            l2.classList.remove("zoomIn");
            l4.classList.remove("zoomIn");
@@ -174,6 +204,9 @@ function tools_hide() {
 
 function referenceList() {
     var x = document.getElementById("reference-hide");
+    var l3 = document.getElementById("nav-label3");
+   var l2 = document.getElementById("nav-label2");
+   var l4 = document.getElementById("nav-label4");
     if (x.style.display === "inline") {
         x.style.display = "none";
 
@@ -223,19 +256,24 @@ function recentProjects() {
   }
 
 function summarize() {
+    hide_mini();
+        var mini = document.getElementById("mini-screen");
     var ding = document.getElementById('ding');
-    ding.play();
-        var reference = document.getElementById("textbox");
-        reference.innerHTML = "<span id='green-text'><p class='bold'>SUMMARIZED TEXT:</p>There are two types of auctions: those in which the price starts out low and is gradually raised, and those in which the price starts out high and is gradually lowered.<br> Auctions can be conducted in open or closed formats. <br> Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount.<br> Auctions can be conducted in open or closed formats. <br><br>Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount." + "<br><br>"+ "</span>" + reference.innerHTML;
+    var header = document.getElementById('mini-header');
+    var para = document.getElementById('mini-para');  
+        header.innerHTML = "Summarized Text"
+        para.innerHTML = "There are two types of auctions: those in which the price starts out low and is gradually raised, and those in which the price starts out high and is gradually lowered.<br> Auctions can be conducted in open or closed formats. <br> Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount.<br> Auctions can be conducted in open or closed formats. <br><br>Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount." + "<br><br>"+ "</span>";
     
 }
-
-function summarizedTexts() {
-    
-
-    summary.innerHTML ="<br><br>" + "There are two types of auctions: those in which the price starts out low and is gradually raised, and those in which the price starts out high and is gradually lowered. <br><br> Auctions can be conducted in open or closed formats. <br> <br> Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount. <br><br>Auctions can be conducted in open or closed formats. <br><br>Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount.";
+function hide_mini() {
+    var mini = document.getElementById("mini-screen");
+    if (mini.style.display === "block") {
+        mini.style.display = "none";
+    } else {
+        mini.style.display = "block";
 }
-
+    
+}
 function openImage() {
     var elem = document.createElement("img");
     elem.setAttribute("src", "resources/img/camera.jpg");
@@ -251,12 +289,6 @@ function retrieveScan(){
     var ding = document.getElementById('ding');
     ding.play();
     var text = localStorage.getItem("scan");
-if (localStorage.getItem("scan") === null) {
-        var summary = document.getElementById('summary-text');
-    if (text === null) {
-        alert("No scan found, scan a file in the 'Scan Page' in the navigation.");
-    } else {
-         var reference = document.getElementById("textbox").innerHTML += '<br><br>' + '<p class="bold">Retrieved text from scan</p>' + text;
-    }
-    }
+         var reference = document.getElementById("mini-").innerHTML += '<br><br>' + '<p class="bold">Retrieved text from scan</p>' + text;
+  
 }
