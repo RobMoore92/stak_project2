@@ -47,7 +47,7 @@
                     <a class="nav-link" href="#" onclick="save()">save <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="file:///">save as <span class="sr-only"></span></a>
+                    <a class="nav-link" href="file:///localhost/storage">test<span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="scanner_tool.html">scan <span class="sr-only"></span></a>
@@ -68,72 +68,72 @@
     <div class="container">
         <div class="row">
             <div class="col-3-sm mx-auto nav-labels">
-                                <p class="nav-labels">REQUIREMENTS</p>
-            <img src="resources/img/requirements.svg" onclick="requirements()" width="50px">
+                <p class="nav-labels">REQUIREMENTS</p>
+                <img src="resources/img/requirements.svg" onclick="requirements()" width="50px">
 
             </div>
             <div class="col-3-sm mx-auto nav-labels">
-                         <p class="nav-labels">CALENDAR</p>
-                          <img src="resources/img/calendar.svg" onclick="calendar()" width="50px">
-       
-            </div> 
-            <div class="col-3-sm mx-auto nav-labels">
-                            <p class="nav-labels">TOOLS</p>
-                          <img src="resources/img/tools.svg" onclick="tools_hide()" width="50px">
-                  
+                <p class="nav-labels">CALENDAR</p>
+                <img src="resources/img/calendar.svg" onclick="calendar()" width="50px">
+
             </div>
             <div class="col-3-sm mx-auto nav-labels">
-                                 <p class="nav-labels">MATERIALS</p>
-   <img src="resources/img/snippets.svg" onclick="snippets_hide()" width="50px">
-         
+                <p class="nav-labels">TOOLS</p>
+                <img src="resources/img/tools.svg" onclick="tools_hide()" width="50px">
+
+            </div>
+            <div class="col-3-sm mx-auto nav-labels">
+                <p class="nav-labels">MATERIALS</p>
+                <img src="resources/img/snippets.svg" onclick="snippets_hide()" width="50px">
+
 
             </div>
         </div>
     </div>
-    
-    
+
+
 
     <div id="tool_popup">
-    <div class="container">
-        <div class="row" >
-            <div class="col-3-sm mx-auto">
-                <button type="button" onclick="summarize()" class="btn top-btn">Summarize</button>
-            </div>
-            <div class="col-3-sm mx-auto">
-                <button type="button" class="btn top-btn" onclick="plagiarismCheck()" data-toggle="modal" data-target="#plagiarism">Plagiarism Check</button>
-            </div>
-            <div class="col-3-sm mx-auto">
-       
-                <button type="button" class="btn top-btn" onclick="addReferenceText()" data-toggle="modal" data-target="#addReference"><audio src="resources/audio/ding.mp3" id="ding"></audio>Add Reference</button>
-            </div>
-            <div class="col-3-sm mx-auto">
-                <button type="button" class="btn top-btn" onclick="retrieveScan()">Retrieve Scan</button>
-            </div>
-        </div>
-         </div>
-        </div>
-    
-     <div id="snippets_popup">
-    <div class="container">
-        <div class="row" >
-            <div class="col-4-sm mx-auto">
-                <button type="button" class="btn top-btn" data-toggle="modal" data-target="#referenceModal" onclick="referenceLoad()">Reference List</button>
-            </div>
-            <div class="col-4-sm mx-auto">
-                <button type="button" class="btn top-btn" data-toggle="modal" data-target="#plagiarismModal">Plagiarism Warnings</button>
-            </div>
-            <div class="col-4-sm mx-auto">
-                <button type="button" class="btn top-btn" onclick="addReferenceText()" data-toggle="modal" data-target="#summarized-texts">Summarized Texts</button>
+        <div class="container">
+            <div class="row">
+                <div class="col-3-sm mx-auto">
+                    <button type="button" onclick="summarize()" class="btn top-btn">Summarize</button>
+                </div>
+                <div class="col-3-sm mx-auto">
+                    <button type="button" class="btn top-btn" onclick="plagiarismCheck()" data-toggle="modal" data-target="#plagiarism">Plagiarism Check</button>
+                </div>
+                <div class="col-3-sm mx-auto">
+
+                    <button type="button" class="btn top-btn" onclick="addReferenceText()" data-toggle="modal" data-target="#addReference"><audio src="resources/audio/ding.mp3" id="ding"></audio>Add Reference</button>
+                </div>
+                <div class="col-3-sm mx-auto">
+                    <button type="button" class="btn top-btn" onclick="retrieveScan()">Retrieve Scan</button>
+                </div>
             </div>
         </div>
-         </div>
+    </div>
+
+    <div id="snippets_popup">
+        <div class="container">
+            <div class="row">
+                <div class="col-4-sm mx-auto">
+                    <button type="button" class="btn top-btn" data-toggle="modal" data-target="#referenceModal" onclick="referenceLoad()">Reference List</button>
+                </div>
+                <div class="col-4-sm mx-auto">
+                    <button type="button" class="btn top-btn" data-toggle="modal" data-target="#plagiarismModal">Plagiarism Warnings</button>
+                </div>
+                <div class="col-4-sm mx-auto">
+                    <button type="button" class="btn top-btn" onclick="addReferenceText()" data-toggle="modal" data-target="#summarized-texts">Summarized Texts</button>
+                </div>
+            </div>
         </div>
+    </div>
     <div class="modal fade" id="plagiarism" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content mt-3">
                 <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLabel">Warning!</h3> 
-                     <audio src="resources/audio/warning.mp3" id="warning"></audio>
+                    <h3 class="modal-title" id="exampleModalLabel">Warning!</h3>
+                    <audio src="resources/audio/warning.mp3" id="warning"></audio>
                     <div class="col-10">
                         <ul>
                             <li class="small" id="plagiarism-url"><a href="https://enginess.io/insights/6-principles-design-la-donald-norman">https://enginess.io/insights/6-principles-design-la-donald-norman</a></li>
@@ -149,7 +149,7 @@
             </div>
         </div>
     </div>
-   
+
 
     <div class="modal fade" id="addReference" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -162,90 +162,90 @@
 
                 </div>
                 <div class="modal-footer">
-                                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-secondary" onclick="addReferenceUrl()" data-dismiss="modal">Save</button>
- 
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" onclick="addReferenceUrl()" data-dismiss="modal">Save</button>
+
                 </div>
             </div>
         </div>
     </div>
 
- <!-- Modal -->
-            <div class="modal fade" id="referenceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content mt-3">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Reference List</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <!-- Modal -->
+    <div class="modal fade" id="referenceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content mt-3">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Reference List</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                        </div>
-                        <div class="modal-body">
-                            <ul>
-                                <li class="h4" id="reference-url"></li>
-                                <li class="lead" id="reference-text"></li>
-                            </ul>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li class="h4" id="reference-url"></li>
+                        <li class="lead" id="reference-text"></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
+        </div>
+    </div>
 
-   <div class="modal fade" id="plagiarismModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="plagiarismModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content mt-3">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel"></h5> <label for="example-text-input" class="col-2 col-form-label">Warning!</label>
-                        <div class="col-10">
+                    <div class="col-10">
                         <ul>
-                                <li class="small" id="plagiarism-url"><a href="https://enginess.io/insights/6-principles-design-la-donald-norman">https://enginess.io/insights/6-principles-design-la-donald-norman</a></li>
-                                <li class="small" id="plagiarism-input">Norman outlines six key principles: visibility, feedback, constraints, mapping, consistency and affordances.</li>
-                            </ul>
-                        </div>
+                            <li class="small" id="plagiarism-url"><a href="https://enginess.io/insights/6-principles-design-la-donald-norman">https://enginess.io/insights/6-principles-design-la-donald-norman</a></li>
+                            <li class="small" id="plagiarism-input">Norman outlines six key principles: visibility, feedback, constraints, mapping, consistency and affordances.</li>
+                        </ul>
+                    </div>
 
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button"class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
-                        <div class="modal fade" id="summarized-texts" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content mt-3">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Summarized Texts</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <div class="modal fade" id="summarized-texts" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content mt-3">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Summarized Texts</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                        </div>
-                        <div class="modal-body">
-                            <ul>
-                                <li class="lead" id="reference-url"> There are two types of auctions: those in which the price starts out low and is gradually raised, and those in which the price starts out high and is gradually lowered. <br><br> Auctions can be conducted in open or closed formats. <br> <br> Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount. <br><br>Auctions can be conducted in open or closed formats. <br><br>Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount."</li>
-                            </ul>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li class="lead" id="reference-url"> There are two types of auctions: those in which the price starts out low and is gradually raised, and those in which the price starts out high and is gradually lowered. <br><br> Auctions can be conducted in open or closed formats. <br> <br> Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount. <br><br>Auctions can be conducted in open or closed formats. <br><br>Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount."</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
-        <div class="modal fade" id="summarized-texts" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        </div>
+    </div>
+    <div class="modal fade" id="summarized-texts" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content mt-3">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel"></h5> <label for="example-text-input" class="col-2 col-form-label">Summarized:</label>
-                        <div class="col-10">
+                    <div class="col-10">
                         <ul>
-                                <li class="small" id="summary-text">"SUMMARIZED TEXT: There are two types of auctions: those in which the price starts out low and is gradually raised, and those in which the price starts out high and is gradually lowered. <br><br> Auctions can be conducted in open or closed formats. <br> <br> Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount. <br><br>Auctions can be conducted in open or closed formats. <br><br>Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount."</li>
-                            </ul>
-                        </div>
+                            <li class="small" id="summary-text">"SUMMARIZED TEXT: There are two types of auctions: those in which the price starts out low and is gradually raised, and those in which the price starts out high and is gradually lowered. <br><br> Auctions can be conducted in open or closed formats. <br> <br> Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount. <br><br>Auctions can be conducted in open or closed formats. <br><br>Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount."</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            </div>
+        </div>
     </div>
 
     <div class="container">
@@ -257,50 +257,50 @@
         </div>
     </div>
     <div class="container">
-    <div id="summarise-card">
-        <h2>Summarised Results</h2>
-        <p id="summarised-results"></p>
+        <div id="summarise-card">
+            <h2>Summarised Results</h2>
+            <p id="summarised-results"></p>
         </div>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
                 <div class="main_screen">
-                    <div id='fake_textarea' contenteditable><p id="textbox"><span class="bold">Example Summary - Highlight the text and press Summarize in the Tools section.</span><br><br>
-                        There are two types of auctions: those in which the price starts out low and is gradually raised, and those in which the price starts out high and is gradually lowered. Both auction types have variants, such as a "buyout option" in which a customer is guaranteed an object if he/she is willing to pay a high price. Moreover, auctions can be conducted in open or closed formats. In closed formats, participants don't know how much others are willing to pay for an object since they use sealed envelopes or some secret method to make their bids. Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount.<br><br><span class="bold">Plagurism Example:</span><br><br><span id="plag">Norman outlines six key principles: visibility, feedback, constraints, mapping, consistency and affordances.</span></p>
-                
-</div>
+                    <div id='fake_textarea' contenteditable>
+                        <p id="textbox"><span class="bold">Example Summary - Highlight the text and press Summarize in the Tools section.</span><br><br> There are two types of auctions: those in which the price starts out low and is gradually raised, and those in which the price starts out high and is gradually lowered. Both auction types have variants, such as a "buyout option" in which a customer is guaranteed an object if he/she is willing to pay a high price. Moreover, auctions can be conducted in open or closed formats. In closed formats, participants don't know how much others are willing to pay for an object since they use sealed envelopes or some secret method to make their bids. Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount.<br><br><span class="bold">Plagurism Example:</span><br><br><span id="plag">Norman outlines six key principles: visibility, feedback, constraints, mapping, consistency and affordances.</span></p>
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-<div class="row">
-            <div class="col-sm-12 fixed-bottom">
-                <img class="float-right" src="resources/img/faq.svg" data-toggle="modal" data-target="#index-help">
-            </div>
+    <div class="row">
+        <div class="col-sm-12 fixed-bottom">
+            <img class="float-right" src="resources/img/faq.svg" data-toggle="modal" data-target="#index-help">
         </div>
+    </div>
 
-        <div class="modal fade" id="index-help" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content mt-3">
-                    <div class="modal-header">
-                        <h4 class="modal-title">The Project Page</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <div class="modal fade" id="index-help" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content mt-3">
+                <div class="modal-header">
+                    <h4 class="modal-title">The Project Page</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-                    </div>
-                    <div class="modal-body">
-                        <p class="lead">Here is the project page. <br><br>It allows you to write your assignment and use various tools to help you along the way! <br><br>1.  Check your project's requirements<br><br>2. Use the Calendar to find important dates<br><br>3. Use the tools to Summarize, Add a Reference, Check for Plagiarism or import your Scanned File<br><br>4. Import the snippets collected from using the tools such as your projects saved references, summaries or a list of plagiarism warnings found. 5. You can also head to the scan page to import your images and insert the text into your project!
-            
-                            
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
+                </div>
+                <div class="modal-body">
+                    <p class="lead">Here is the project page. <br><br>It allows you to write your assignment and use various tools to help you along the way! <br><br>1. Check your project's requirements<br><br>2. Use the Calendar to find important dates<br><br>3. Use the tools to Summarize, Add a Reference, Check for Plagiarism or import your Scanned File<br><br>4. Import the snippets collected from using the tools such as your projects saved references, summaries or a list of plagiarism warnings found. 5. You can also head to the scan page to import your images and insert the text into your project!
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
+    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
