@@ -28,7 +28,8 @@ function calendar() {
 function toggler() {
     var x = document.getElementById("req_list");
     var y = document.getElementById("calendar_hide");
-    y.style.display = "none"
+    y.style.display = "none";
+    y.classList.add("test");
     if (x.style.display === "block") {
         x.style.display = "none";
     } else {
@@ -94,13 +95,13 @@ function loadProject() {
     if (title.innerHTML === null) {
         
     } else {
-    title.innerHTML = ('Title: ' + new_title);
+    title.innerHTML += new_title;
     }
     
     if (due.innerHTML === null) {
         due.innerHTML = ('No due date set');
     } else {
-    due.innerHTML = ('Due: ' + new_due);
+    due.innerHTML += new_due;
     }
 }
 
@@ -117,26 +118,57 @@ alert(test);
 function snippets_hide() {
     var y = document.getElementById("tool_popup");
           var x = document.getElementById("snippets_popup");
+       var l1 = document.getElementById("nav-label1");
+   var l2 = document.getElementById("nav-label2");
+   var l3 = document.getElementById("nav-label3");
     if (x.style.display === "inline") {
         x.style.display = "none";
         y.style.display = "none";
-
+                l1.classList.remove("zoomOut");
+           l2.classList.remove("zoomOut");
+           l3.classList.remove("zoomOut");
+            l1.classList.add("zoomIn");
+           l2.classList.add("zoomIn");
+           l3.classList.add("zoomIn");
     } else {
         x.style.display = "inline";
                 y.style.display = "none";
+            l1.classList.remove("zoomIn");
+           l2.classList.remove("zoomIn");
+           l3.classList.remove("zoomIn");
+           l1.classList.add("zoomOut");
+           l2.classList.add("zoomOut");
+           l3.classList.add("zoomOut");
     }
 }
 
 function tools_hide() {
     var x = document.getElementById("tool_popup");
-          var y = document.getElementById("snippets_popup");
+    var y = document.getElementById("snippets_popup");
+   var l1 = document.getElementById("nav-label1");
+   var l2 = document.getElementById("nav-label2");
+   var l4 = document.getElementById("nav-label4");
+
     if (x.style.display === "inline") {
         x.style.display = "none";
-                y.style.display = "none";
-
+        y.style.display = "none";
+                  l1.classList.remove("zoomOut");
+           l2.classList.remove("zoomOut");
+           l4.classList.remove("zoomOut");
+            l1.classList.add("zoomIn");
+           l2.classList.add("zoomIn");
+           l4.classList.add("zoomIn");
     } else {
         x.style.display = "inline";
         y.style.display = "none";
+   l1.classList.add("animated");
+                        l1.classList.remove("zoomIn");
+           l2.classList.remove("zoomIn");
+           l4.classList.remove("zoomIn");
+           l1.classList.add("zoomOut");
+           l2.classList.add("zoomOut");
+           l4.classList.add("zoomOut");
+        
     }
 }
 
@@ -219,10 +251,12 @@ function retrieveScan(){
     var ding = document.getElementById('ding');
     ding.play();
     var text = localStorage.getItem("scan");
+if (localStorage.getItem("scan") === null) {
         var summary = document.getElementById('summary-text');
     if (text === null) {
         alert("No scan found, scan a file in the 'Scan Page' in the navigation.");
     } else {
          var reference = document.getElementById("textbox").innerHTML += '<br><br>' + '<p class="bold">Retrieved text from scan</p>' + text;
+    }
     }
 }

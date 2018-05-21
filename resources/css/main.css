@@ -1,23 +1,25 @@
-bdy {
-    width: 360px;
-    margin: 0 auto;
-    margin-top: 200px
-}
 .st-dtitle {
     font-size: 1em;
 }
+
 .spacing {
     margin-top: 35vh;
 }
 
-.nav-labels {
+.nav-labels, #nav-labels {
     text-align: center;
     font-size: 10px;
 }
+
 .lead {
     color: #242424;
 }
-
+a.navbar-brand {
+  
+}
+.test {
+    font-size: 4em;
+}
 /* main page */
 
 .save-margin {
@@ -105,6 +107,10 @@ p {
 
     
 }
+
+#insert_nav {
+    padding-top: 10px;
+}
 .new_project p,
 .open_project p {
     text-align: center;
@@ -113,9 +119,12 @@ p {
     font-weight: 600;
     
 }
-
+.top-btn {
+    min-width: 100px;
+        margin-left: 5%;
+    margin-right: 5%;
+}
 #insert_nav {
-    margin-top: 10px;
 }
 
 .line-break {
@@ -155,7 +164,6 @@ li {
 
 nav-bar li {
     display: inline-block;
-    display: inline-block;
 }
 
 .vertical_line {
@@ -182,7 +190,6 @@ nav-bar li {
 
 #tool_popup {
     display: none;
-    width: 100px;
 
 }
 
@@ -211,11 +218,10 @@ nav-bar li {
 }
 
 .navbar-nav {
-    float: none;
+    padding-top: 20px;
     margin: 0 auto;
     display: block;
     text-align: center;
-    padding-right: 11%;
     font-size: 12px;
 }
 
@@ -287,8 +293,6 @@ select,
 }
 
 #req_list {
-    padding: 10px;
-    display: none;
 }
 
 .list-group-item {
@@ -355,7 +359,7 @@ br {
 }
 
 ul {
-    list-style-type: none;
+    list-style-type: decimal;
 }
 
 #urlInput {
@@ -388,7 +392,6 @@ ul {
 
 .top-btn {
     font-size: 10px;
-    padding: 5px;
 }
 
 .top {
@@ -474,14 +477,6 @@ ul {
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    .navbar a {font-size: 2em;
-    margin: 0px 40px 0px 40px;}
-    .navbar-nav {
-    float: none;
-    margin: 0 auto;
-    display: block;
-    text-align: center;
 
-}
 }
 }

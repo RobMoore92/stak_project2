@@ -10,6 +10,7 @@
     <script src="resources/js/project_main.js"></script>
     <title>STAK | Study Tool</title>
     <script src="resources/js/localStorage.js"></script>
+        <link href='venders/css/animate.css' rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="venders/css/bootstrap/bootstrap.min.css" rel="stylesheet">
 
@@ -21,11 +22,11 @@
 
 
 <body class="bg-light" onload=loadProject()>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.html">
             <div class="row">
                 <div class="small_title col-xs-12">
-                    <h1>Stak <span class="thin_title"><span class="vertical_line">|</span>Study Tool</span>
+                    <h1 class = "animated slideInLeft">Stak <span class="thin_title animated zoomInLeft"><span class="vertical_line animated zoomInLeft">|</span>Study Tool</span>
                     </h1>
                 </div>
 
@@ -47,43 +48,37 @@
                     <a class="nav-link" href="#" onclick="save()">save <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="file:///localhost/storage">test<span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="scanner_tool.html">scan <span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="project_main.html">project <span class="sr-only"></span></a>
                 </li>
-
             </ul>
         </div>
     </nav>
+   
     <div class="container">
-        <p id=title1 class="small"></p>
-        <p id="due_date1" class="small"></p>
+        <p id=title1 class="small">Title: </p>
+        <p id="due_date1" class="small">Due Date: </p>
         <div class="line-break"></div>
     </div>
 
     <div class="container">
         <div class="row">
-            <div class="col-3-sm mx-auto nav-labels">
-                <p class="nav-labels">REQUIREMENTS</p>
+            <div class="col-3-sm mx-auto nav-labels animated" id="nav-label1">
+                <p>REQUIREMENTS</p>
                 <img src="resources/img/requirements.svg" onclick="requirements()" width="50px">
 
             </div>
-            <div class="col-3-sm mx-auto nav-labels">
-                <p class="nav-labels">CALENDAR</p>
+            <div class="col-3-sm mx-auto nav-labels animated" id="nav-label2">
+                 <p>CALENDAR</p>
                 <img src="resources/img/calendar.svg" onclick="calendar()" width="50px">
 
             </div>
-            <div class="col-3-sm mx-auto nav-labels">
-                <p class="nav-labels">TOOLS</p>
+            <div class="col-3-sm mx-auto nav-labels animated" id="nav-label3">
+                 <p>TOOLS</p>
                 <img src="resources/img/tools.svg" onclick="tools_hide()" width="50px">
 
             </div>
-            <div class="col-3-sm mx-auto nav-labels">
-                <p class="nav-labels">MATERIALS</p>
+            <div class="col-3-sm mx-auto nav-labels animated" id="nav-label4">
+               <p>MATERIALS</p>
                 <img src="resources/img/snippets.svg" onclick="snippets_hide()" width="50px">
 
 
@@ -107,7 +102,8 @@
                     <button type="button" class="btn top-btn" onclick="addReferenceText()" data-toggle="modal" data-target="#addReference"><audio src="resources/audio/ding.mp3" id="ding"></audio>Add Reference</button>
                 </div>
                 <div class="col-3-sm mx-auto">
-                    <button type="button" class="btn top-btn" onclick="retrieveScan()">Retrieve Scan</button>
+                    <a href="/scanner_tool.html">
+                    <button type="button" class="btn top-btn" onclick="retrieveScan()">Scan</button></a>
                 </div>
             </div>
         </div>
