@@ -143,7 +143,9 @@ function addReferenceUrl() {
     ding.play()
 }
 
-
+function scanOpen() {
+    document.getElementById('file').click();
+}
 function loadProject() {
     retrieveScan();
     var new_title = localStorage.getItem("title");
