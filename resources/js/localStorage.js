@@ -242,7 +242,7 @@ function referenceLoad() {
 
     originUrl.innerHTML = refUrl;
     originText.innerHTML = refText;
-    header.innerHTML = "Reference List"
+    header.innerHTML = "Reference Added"
 }
 
 function plagurismList() {
