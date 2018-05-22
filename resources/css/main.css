@@ -374,7 +374,12 @@ f .list-group {}
     border: 1px black solid;
     overflow-y: scroll
 }
-
+#upload_button {
+  display: inline-block;
+}
+#upload_button input[type=file] {
+  display:none;
+}
 #mini-screen {
     margin-top: 10px;
     display: none;
@@ -472,9 +477,7 @@ display: block;
 
 .camera {
     height: 400px;
-
-
-
+    
     text-align: center;
 }
 

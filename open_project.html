@@ -55,14 +55,11 @@
     <div class="container">
         <h2>Choose Option</h2>
         <div class="line-break"></div>
-        <a href="scanner_tool.html"><button type="button" class="btn btn-outline-dark btn-lg btn-block spacing">Scan File</button>
-            
-    </a>
-        <a href="project_main.html"><button type="button "class="btn btn-outline-dark btn-lg btn-block mt-3">Open File</button>
-        
-        </a>
-        <input type="file" accept="image/*" capture>
-        <input type="file" name="image" accept="image/*" capture="environment">
+        <button type="button" id="loadFileXml" onclick="document.getElementById('file').click();" class="btn btn-outline-dark btn-lg btn-block mt-3">Open File</button>
+<input type="file" style="display:none;" id="file" name="image/*" capture="environment">
+        <button type="button" id="loadFileXml" value="loadXml" onclick="document.getElementById('file').click();" class="btn btn-outline-dark btn-lg btn-block mt-3">Scan File</button>
+<input type="file" style="display:none;" id="file" name="image/*">
+
     </div>
     <div class="container">
 
