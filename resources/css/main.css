@@ -8,7 +8,7 @@
 
 .nav-labels, #nav-labels {
     text-align: center;
-    font-size: 10px;
+    font-size: px;
 }
 
 .lead {
@@ -110,8 +110,8 @@ p {
     margin-top: 50px;
 }
 .top-btn {
-    padding-left: 0px;
-    padding-right: 0px;
+    margin-left: 10px;
+    padding-right: 20px;
     font-family: 'Roboto', sans-serif;
 }
 .spaced {
@@ -426,8 +426,7 @@ ul {
 .list-group {
     width: 100%;
 }
-.top-btn, . {
-}
+
 #imageholder {
     min-height: 400px;
     width: 100%;
@@ -436,14 +435,13 @@ ul {
 }
 .top-btn {
     margin-top: 10px;
-    font-size: 9px;
 }
 #textbox {
     height: 60vh;
 }
 
 .p-2 {
-        margin-top: 5px;
+        margin: 25px;
 display: block;
 }
 .main-bar {
@@ -456,7 +454,7 @@ display: block;
 }
 
 .top-btn {
-    font-size: 9px;
+    font-size: 10px;
 }
 
 .top {
