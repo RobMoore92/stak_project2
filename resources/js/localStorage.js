@@ -145,6 +145,8 @@ function addReferenceUrl() {
 
 function scanOpen() {
     document.getElementById('file').click();
+        scanFile();
+    retrieveScan();
 }
 function loadProject() {
     retrieveScan();
@@ -321,6 +323,7 @@ function openImage() {
 function scanFile() {
     var text = "The scan tool can scan written text and import it to the project area";
     localStorage.setItem("scan", text);
+
 }
 
 function retrieveScan() {
