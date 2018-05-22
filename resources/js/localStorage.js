@@ -135,6 +135,7 @@ function addReferenceUrl() {
     var reference = localStorage.getItem('reference');
     var header = document.getElementById('mini-header');
     var para = document.getElementById('mini-para');
+    var urlmini = document.getElementById('mini-url')
     var refText = document.getElementById('reference-text');
     localStorage.setItem('referenceUrl', url);
             var ding = document.getElementById('ding');
@@ -143,10 +144,13 @@ function addReferenceUrl() {
         hide_mini();
         header.innerHTML = "Reference Added";
         para.innerHTML = reference;
+        urlmini.innerHTML = url;
+        
     } else {
         ding.play();
         hide_mini();
         header.innerHTML = "To add a reference, select some text first";
+        para.innerHTML = '';
         refText.innerHTML = "";
         
     }
