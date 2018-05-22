@@ -142,12 +142,13 @@ function addReferenceUrl() {
     var ding = document.getElementById('ding');
     ding.play()
 }
-
 function scanOpen() {
     document.getElementById('file').click();
-        scanFile();
-    retrieveScan();
+    setInterval(scanFile(), 3000);
+   setInterval(retrieveScan(), 3000);
+
 }
+
 function loadProject() {
     retrieveScan();
     var new_title = localStorage.getItem("title");
@@ -325,13 +326,12 @@ function scanFile() {
     localStorage.setItem("scan", text);
 
 }
-
+    
 function retrieveScan() {
+
     var scanLocal = localStorage.getItem("scan");
     if (scanLocal !== null) {
         hide_mini();
-        var ding = document.getElementById('ding');
-        ding.play();
         var scan_header = document.getElementById("mini-header").innerHTML = "Scanned Text";
         var scan = document.getElementById("mini-para").innerHTML = "Retrieved text from scan";
 
