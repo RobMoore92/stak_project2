@@ -107,7 +107,7 @@
                 </div>
                 <div class="p-2"> <button type="button" class="btn top-btn" data-toggle="modal" data-target="#plagiarismModal">PLAGIARISE LIST</button>
                 </div>
-                <div class="p-2"> <button type="button" class="btn top-btn" onclick="addReferenceText()" data-toggle="modal" data-target="#summarized-texts">SUMMARIES </button>
+                <div class="p-2"> <button type="button" class="btn top-btn" onclick="summarize()" data-toggle="modal" data-target="#summarized-texts">SUMMARIES </button>
                 </div>
             </div>
         </div>
@@ -120,7 +120,7 @@
                     <audio src="resources/audio/warning.mp3" id="warning"></audio>
                     <div class="col-10">
                         <ul>
-                            <li class="small" id="plagiarism-url"><a href="https://enginess.io/insights/6-principles-design-la-donald-norman">https://enginess.io/insights/6-principles-design-la-donald-norman</a></li>
+                            <p class="lead" id="plagiarism-url"><a href="https://enginess.io/insights/6-principles-design-la-donald-norman">https://enginess.io/insights/6-principles-design-la-donald-norman</a></p>
                             <li class="small" id="plagiarism-input">Norman outlines six key principles: visibility, feedback, constraints, mapping, consistency and affordances.</li>
                         </ul>
                     </div>
@@ -139,7 +139,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content mt-3">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Add reference</h5> <label for="example-text-input" class="col-2 col-form-label"></label>
+                    <h5 id="exampleModalLabel">Add reference</h5> <label for="example-text-input" class=" col-form-label"></label>
                     <div class="col-10">
                         <input class="form-control" id="urlInput" type="text" value="" placeholder="Enter reference URL here" id="example-text-input">
                     </div>
@@ -165,10 +165,10 @@
                             </button>
                 </div>
                 <div class="modal-body">
-                    <ul>
-                        <li class="h4" id="reference-url"></li>
-                        <li class="lead" id="reference-text"></li>
-                    </ul>
+            
+                        <p id="reference-url"></p>
+                        <p class="lead" id="reference-text"></p>
+       
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -207,9 +207,8 @@
                             </button>
                 </div>
                 <div class="modal-body">
-                    <ul>
-                        <li class="lead" id="reference-url"> There are two types of auctions: those in which the price starts out low and is gradually raised, and those in which the price starts out high and is gradually lowered. <br><br> Auctions can be conducted in open or closed formats. <br> <br> Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount. <br><br>Auctions can be conducted in open or closed formats. <br><br>Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount."</li>
-                    </ul>
+       
+                        <p class="lead" id="reference-url"> There are two types of auctions: those in which the price starts out low and is gradually raised, and those in which the price starts out high and is gradually lowered. <br><br> Auctions can be conducted in open or closed formats. <br> <br> Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount. <br><br>Auctions can be conducted in open or closed formats. <br><br>Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

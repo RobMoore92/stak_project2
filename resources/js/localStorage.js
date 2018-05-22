@@ -11,17 +11,17 @@ function requirements() {
     loadReqs();
 }
 
-function fireEvent(element,event) {
-   if (document.createEvent) {
-       // dispatch for firefox + others
-       var evt = document.createEvent("HTMLEvents");
-       evt.initEvent(event, true, true ); // event type,bubbling,cancelable
-       return !element.dispatchEvent(evt);
-   } else {
-       // dispatch for IE
-       var evt = document.createEventObject();
-       return element.fireEvent('on'+event,evt)
-   }
+function fireEvent(element, event) {
+    if (document.createEvent) {
+        // dispatch for firefox + others
+        var evt = document.createEvent("HTMLEvents");
+        evt.initEvent(event, true, true); // event type,bubbling,cancelable
+        return !element.dispatchEvent(evt);
+    } else {
+        // dispatch for IE
+        var evt = document.createEventObject();
+        return element.fireEvent('on' + event, evt)
+    }
 };
 
 function calendar() {
@@ -119,33 +119,43 @@ function saveProject() {
 }
 
 function addReferenceText() {
-    var mini = document.getElementById("fake_mini");
     var header = document.getElementById('mini-header');
     var para = document.getElementById('mini-para');
-    hide_mini();
-    if (window.getSelection().toString() !== undefined){
-        para.innerHTML = "No text was selected, please select your reference text."
-        header.innerHTML = "";
-               var reference = window.getSelection();
-                localStorage.setItem('reference', reference);
-        mini.style.display = "block";
-    } else {
- 
-        reference.toString();
-
-        }
+    var reference = window.getSelection();
+    localStorage.setItem('reference', reference);
+    if (reference.toString === '') {
+        hide_mini();
+        header.innerHTML = "No text was selected, please select your reference text."
+        para.innerHTML = "";
+    }
 }
 
 function addReferenceUrl() {
     var url = document.getElementById('urlInput').value;
+    var reference = localStorage.getItem('reference');
+    var header = document.getElementById('mini-header');
+    var para = document.getElementById('mini-para');
+    var refText = document.getElementById('reference-text');
     localStorage.setItem('referenceUrl', url);
-    var ding = document.getElementById('ding');
-    ding.play()
+            var ding = document.getElementById('ding');
+    
+    if (reference !== '') {
+        hide_mini();
+        header.innerHTML = "Reference Added";
+        para.innerHTML = reference;
+    } else {
+        ding.play();
+        hide_mini();
+        header.innerHTML = "To add a reference, select some text first";
+        refText.innerHTML = "";
+        
+    }
 }
+
 function scanOpen() {
     document.getElementById('file').click();
     setInterval(scanFile(), 3000);
-   setInterval(retrieveScan(), 3000);
+    setInterval(retrieveScan(), 3000);
 
 }
 
@@ -250,15 +260,18 @@ function referenceList() {
 }
 
 function referenceLoad() {
+    hide_mini();
     var refUrl = localStorage.getItem("referenceUrl");
     var refText = localStorage.getItem("reference");
     var header = document.getElementById('mini-header')
-    var originUrl = document.getElementById('mini-url');
+    var originUrl = document.getElementById('reference-url');
     var originText = document.getElementById('mini-para');
-
-    originUrl.innerHTML = refUrl;
+    var ref1text = document.getElementById('reference-text');
+    originUrl = "URL: " + refUrl;
+    ref1text.innerHTML = refText;
     originText.innerHTML = refText;
-    header.innerHTML = "Reference Added"
+    header.innerHTML = "Reference Added";
+    originUrl.innerHTML = "test";
 }
 
 function plagurismList() {
@@ -290,7 +303,7 @@ function recentProjects() {
 }
 
 function summarize() {
-    hide_mini();
+
     var mini = document.getElementById("mini-screen");
     var ding = document.getElementById('ding');
     var header = document.getElementById('mini-header');
@@ -298,10 +311,12 @@ function summarize() {
     var textbox = document.getElementById('textbox');
     var texthigh = document.getSelection().toString()
     if (texthigh.includes("auctions")) {
-        header.innerHTML = "Summarized Text"
+        hide_mini();
+        header.innerHTML = "Summarized Text";
         para.innerHTML = "There are two types of auctions: those in which the price starts out low and is gradually raised, and those in which the price starts out high and is gradually lowered.<br> Auctions can be conducted in open or closed formats. <br> Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount.<br> Auctions can be conducted in open or closed formats. <br><br>Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount." + "<br><br>" + "</span>";
     } else {
-        header.innerHTML = "Incorrect text has been high-lighted, please highlight the example below."
+        hide_mini()
+        para.innerHTML = "You have not highlighted a paragraph, try selecting the example below";
     }
 }
 
@@ -326,7 +341,7 @@ function scanFile() {
     localStorage.setItem("scan", text);
 
 }
-    
+
 function retrieveScan() {
 
     var scanLocal = localStorage.getItem("scan");

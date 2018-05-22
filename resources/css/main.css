@@ -366,7 +366,9 @@ f .list-group {}
 #reference-hide {
     display: none;
 }
-
+#reference-url {
+    font-size: 12px;
+}
 .main_screen {
     margin-top: -10px;
     height: 60vh;
@@ -439,9 +441,13 @@ ul {
 #textbox {
     height: 60vh;
 }
-
+#insert_nav {
+    display: none;
+}
 .p-2 {
-        margin: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+padding: 20px;
 display: block;
 }
 .main-bar {
