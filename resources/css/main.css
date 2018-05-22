@@ -117,7 +117,9 @@ p {
 .spaced {
     margin: 1%;
 }
-
+#imageholder{
+    border-radius: 5px;
+}
 .new_project p,
 .open_project p {
     text-align: center;
@@ -394,7 +396,7 @@ br {
     padding: 12px 10px 5px 10px;
     background-attachment: local;
     resize: none;
-    line-height: 20px
+    line-height: 20px;
             border: 1px black solid;
 }
 #fake_textarea {

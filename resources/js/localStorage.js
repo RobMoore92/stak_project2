@@ -11,30 +11,32 @@ function requirements() {
     loadReqs();
 }
 
+
+
 function calendar() {
     var x = document.getElementById("calendar_hide");
     var y = document.getElementById('req_list');
-       var l1 = document.getElementById("nav-label1");
-   var l3 = document.getElementById("nav-label3");
-   var l4 = document.getElementById("nav-label4");
+    var l1 = document.getElementById("nav-label1");
+    var l3 = document.getElementById("nav-label3");
+    var l4 = document.getElementById("nav-label4");
     y.style.display = "none";
     if (x.style.display === "block") {
         x.style.display = "none";
-                l1.classList.remove("zoomOut");
-           l4.classList.remove("zoomOut");
-           l3.classList.remove("zoomOut");
-            l1.classList.add("zoomIn");
-           l4.classList.add("zoomIn");
-           l3.classList.add("zoomIn");
+        l1.classList.remove("zoomOut");
+        l4.classList.remove("zoomOut");
+        l3.classList.remove("zoomOut");
+        l1.classList.add("zoomIn");
+        l4.classList.add("zoomIn");
+        l3.classList.add("zoomIn");
 
     } else {
         x.style.display = "block";
-                        l1.classList.remove("zoomIn");
-           l3.classList.remove("zoomIn");
-           l4.classList.remove("zoomIn");
-           l1.classList.add("zoomOut");
-           l3.classList.add("zoomOut");
-           l4.classList.add("zoomOut");
+        l1.classList.remove("zoomIn");
+        l3.classList.remove("zoomIn");
+        l4.classList.remove("zoomIn");
+        l1.classList.add("zoomOut");
+        l3.classList.add("zoomOut");
+        l4.classList.add("zoomOut");
     }
 }
 
@@ -43,29 +45,29 @@ function toggler() {
     var x = document.getElementById("req_list");
     var y = document.getElementById("insert_nav");
     var z = document.getElementById('calendar_hide')
-           var l4 = document.getElementById("nav-label4");
-   var l2 = document.getElementById("nav-label2");
-   var l3 = document.getElementById("nav-label3");
+    var l4 = document.getElementById("nav-label4");
+    var l2 = document.getElementById("nav-label2");
+    var l3 = document.getElementById("nav-label3");
     y.style.display = "none";
     z.classList.add("calendar_hide");
     if (x.style.display === "block") {
         x.style.display = "none";
-         x.style.display = "none";
-                        l2.classList.remove("zoomOut");
-           l4.classList.remove("zoomOut");
-           l3.classList.remove("zoomOut");
-            l2.classList.add("zoomIn");
-           l4.classList.add("zoomIn");
-           l3.classList.add("zoomIn");
+        x.style.display = "none";
+        l2.classList.remove("zoomOut");
+        l4.classList.remove("zoomOut");
+        l3.classList.remove("zoomOut");
+        l2.classList.add("zoomIn");
+        l4.classList.add("zoomIn");
+        l3.classList.add("zoomIn");
     } else {
         x.style.display = "block";
         y.style.display = "block";
-                        l2.classList.remove("zoomIn");
-           l3.classList.remove("zoomIn");
-           l4.classList.remove("zoomIn");
-           l2.classList.add("zoomOut");
-           l3.classList.add("zoomOut");
-           l4.classList.add("zoomOut");
+        l2.classList.remove("zoomIn");
+        l3.classList.remove("zoomIn");
+        l4.classList.remove("zoomIn");
+        l2.classList.add("zoomOut");
+        l3.classList.add("zoomOut");
+        l4.classList.add("zoomOut");
     }
 }
 
@@ -91,7 +93,7 @@ function loadReqs() {
 
             } else {
                 var item_empty = document.createElement("li");
-                item_empty.innerHTML = '    ';
+                item_empty.innerHTML = ' No requirement set';
                 origin.appendChild(item_empty);
             }
         }
@@ -106,19 +108,33 @@ function saveProject() {
 }
 
 function addReferenceText() {
-    var reference = window.getSelection().toString();
-    localStorage.setItem('reference', reference);
+    var mini = document.getElementById("fake_mini");
+    var header = document.getElementById('mini-header');
+    var para = document.getElementById('mini-para');
+    hide_mini();
+    if (window.getSelection().toString() !== undefined){
+        para.innerHTML = "No text was selected, please select your reference text."
+        header.innerHTML = "";
+               var reference = window.getSelection();
+                localStorage.setItem('reference', reference);
+        mini.style.display = "block";
+    } else {
+ 
+        reference.toString();
+
+        }
 }
 
-function addReferenceUrl(){
-        var url = document.getElementById('urlInput').value;
-        localStorage.setItem('referenceUrl', url);
-       var ding = document.getElementById('ding');
+function addReferenceUrl() {
+    var url = document.getElementById('urlInput').value;
+    localStorage.setItem('referenceUrl', url);
+    var ding = document.getElementById('ding');
     ding.play()
 }
 
 
 function loadProject() {
+    retrieveScan();
     var new_title = localStorage.getItem("title");
     var new_due = localStorage.getItem("due_date");
     var title = document.getElementById('title1');
@@ -126,13 +142,13 @@ function loadProject() {
     if (new_title === "") {
         title.innerHTML = "No title has been set";
     } else {
-    title.innerHTML += new_title;
+        title.innerHTML += new_title;
     }
-    
+
     if (new_due === "") {
         due.innerHTML = 'No due date has been set';
     } else {
-    due.innerHTML += new_due;
+        due.innerHTML += new_due;
     }
 }
 
@@ -143,88 +159,90 @@ function save() {
 }
 
 function saveas() {
-alert(test);
+    alert(test);
 }
 
 function snippets_hide() {
     var y = document.getElementById("tool_popup");
-          var x = document.getElementById("snippets_popup");
-       var l1 = document.getElementById("nav-label1");
-   var l2 = document.getElementById("nav-label2");
-   var l3 = document.getElementById("nav-label3");
+    var x = document.getElementById("snippets_popup");
+    var l1 = document.getElementById("nav-label1");
+    var l2 = document.getElementById("nav-label2");
+    var l3 = document.getElementById("nav-label3");
     if (x.style.display === "inline") {
         x.style.display = "none";
         y.style.display = "none";
-                l1.classList.remove("zoomOut");
-           l2.classList.remove("zoomOut");
-           l3.classList.remove("zoomOut");
-            l1.classList.add("zoomIn");
-           l2.classList.add("zoomIn");
-           l3.classList.add("zoomIn");
+        l1.classList.remove("zoomOut");
+        l2.classList.remove("zoomOut");
+        l3.classList.remove("zoomOut");
+        l1.classList.add("zoomIn");
+        l2.classList.add("zoomIn");
+        l3.classList.add("zoomIn");
     } else {
         x.style.display = "inline";
-                y.style.display = "none";
-            l1.classList.remove("zoomIn");
-           l2.classList.remove("zoomIn");
-           l3.classList.remove("zoomIn");
-           l1.classList.add("zoomOut");
-           l2.classList.add("zoomOut");
-           l3.classList.add("zoomOut");
+        y.style.display = "none";
+        l1.classList.remove("zoomIn");
+        l2.classList.remove("zoomIn");
+        l3.classList.remove("zoomIn");
+        l1.classList.add("zoomOut");
+        l2.classList.add("zoomOut");
+        l3.classList.add("zoomOut");
     }
 }
 
 function tools_hide() {
     var x = document.getElementById("tool_popup");
     var y = document.getElementById("snippets_popup");
-   var l1 = document.getElementById("nav-label1");
-   var l2 = document.getElementById("nav-label2");
-   var l4 = document.getElementById("nav-label4");
+    var l1 = document.getElementById("nav-label1");
+    var l2 = document.getElementById("nav-label2");
+    var l4 = document.getElementById("nav-label4");
 
     if (x.style.display === "inline") {
         x.style.display = "none";
         y.style.display = "none";
-                  l1.classList.remove("zoomOut");
-           l2.classList.remove("zoomOut");
-           l4.classList.remove("zoomOut");
-            l1.classList.add("zoomIn");
-           l2.classList.add("zoomIn");
-           l4.classList.add("zoomIn");
+        l1.classList.remove("zoomOut");
+        l2.classList.remove("zoomOut");
+        l4.classList.remove("zoomOut");
+        l1.classList.add("zoomIn");
+        l2.classList.add("zoomIn");
+        l4.classList.add("zoomIn");
     } else {
         x.style.display = "inline";
         y.style.display = "none";
-                        l1.classList.remove("zoomIn");
-           l2.classList.remove("zoomIn");
-           l4.classList.remove("zoomIn");
-           l1.classList.add("zoomOut");
-           l2.classList.add("zoomOut");
-           l4.classList.add("zoomOut");
-        
+        l1.classList.remove("zoomIn");
+        l2.classList.remove("zoomIn");
+        l4.classList.remove("zoomIn");
+        l1.classList.add("zoomOut");
+        l2.classList.add("zoomOut");
+        l4.classList.add("zoomOut");
+
     }
 }
 
 function referenceList() {
     var x = document.getElementById("reference-hide");
     var l3 = document.getElementById("nav-label3");
-   var l2 = document.getElementById("nav-label2");
-   var l4 = document.getElementById("nav-label4");
+    var l2 = document.getElementById("nav-label2");
+    var l4 = document.getElementById("nav-label4");
     if (x.style.display === "inline") {
         x.style.display = "none";
 
     } else {
-             x.style.display = "inline";
+        x.style.display = "inline";
         y.style.display = "none";
 
     }
 }
 
-function referenceLoad(){
-  var refUrl = localStorage.getItem("referenceUrl");
+function referenceLoad() {
+    var refUrl = localStorage.getItem("referenceUrl");
     var refText = localStorage.getItem("reference");
-    var originUrl = document.getElementById('reference-url');
-    var originText = document.getElementById('reference-text');
+    var header = document.getElementById('mini-header')
+    var originUrl = document.getElementById('mini-url');
+    var originText = document.getElementById('mini-para');
 
     originUrl.innerHTML = refUrl;
     originText.innerHTML = refText;
+    header.innerHTML = "Reference List"
 }
 
 function plagurismList() {
@@ -237,7 +255,7 @@ function plagurismList() {
     }
 }
 
-function plagiarismCheck(){
+function plagiarismCheck() {
     var danger = document.getElementById('warning');
     danger.play();
     var text1 = document.getElementById('plag');
@@ -246,49 +264,68 @@ function plagiarismCheck(){
 
 
 function recentProjects() {
-  var title = localStorage.getItem('title');
-  var recentProjects = document.getElementById('recent-project');
-  if (title === null) {
-    recentProjects.innerHTML = 'No recent projects have been saved';
-  } else {
+    var title = localStorage.getItem('title');
+    var recentProjects = document.getElementById('recent-project');
+    if (title === null) {
+        recentProjects.innerHTML = 'No recent projects have been saved';
+    } else {
         recentProjects.innerHTML = title;
-  }
-  }
+    }
+}
 
 function summarize() {
     hide_mini();
-        var mini = document.getElementById("mini-screen");
+    var mini = document.getElementById("mini-screen");
     var ding = document.getElementById('ding');
     var header = document.getElementById('mini-header');
-    var para = document.getElementById('mini-para');  
+    var para = document.getElementById('mini-para');
+    var textbox = document.getElementById('textbox');
+    var texthigh = document.getSelection().toString()
+    if (texthigh.includes("auctions")) {
         header.innerHTML = "Summarized Text"
-        para.innerHTML = "There are two types of auctions: those in which the price starts out low and is gradually raised, and those in which the price starts out high and is gradually lowered.<br> Auctions can be conducted in open or closed formats. <br> Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount.<br> Auctions can be conducted in open or closed formats. <br><br>Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount." + "<br><br>"+ "</span>";
-    
+        para.innerHTML = "There are two types of auctions: those in which the price starts out low and is gradually raised, and those in which the price starts out high and is gradually lowered.<br> Auctions can be conducted in open or closed formats. <br> Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount.<br> Auctions can be conducted in open or closed formats. <br><br>Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount." + "<br><br>" + "</span>";
+    } else {
+        header.innerHTML = "Incorrect text has been high-lighted, please highlight the example below."
+    }
 }
+
 function hide_mini() {
     var mini = document.getElementById("mini-screen");
     if (mini.style.display === "block") {
         mini.style.display = "none";
     } else {
         mini.style.display = "block";
+    }
+
 }
-    
-}
+
 function openImage() {
     var elem = document.createElement("img");
     elem.setAttribute("src", "resources/img/camera.jpg");
-document.getElementById("imageholder").appendChild(elem);
+    document.getElementById("imageholder").appendChild(elem);
 }
 
-function scanFile(){
+function scanFile() {
     var text = "The scan tool can scan written text and import it to the project area";
     localStorage.setItem("scan", text);
 }
 
-function retrieveScan(){
-    var ding = document.getElementById('ding');
-    ding.play();
-    var text = localStorage.getItem("scan");
-         var reference = document.getElementById("mini-").innerHTML += '<br><br>' + '<p class="bold">Retrieved text from scan</p>' + text;
-  
+function retrieveScan() {
+    var scanLocal = localStorage.getItem("scan");
+    if (scanLocal !== null) {
+        hide_mini();
+        var ding = document.getElementById('ding');
+        ding.play();
+        var scan_header = document.getElementById("mini-header").innerHTML = "Scanned Text";
+        var scan = document.getElementById("mini-para").innerHTML = "Retrieved text from scan";
+
+    }
+    localStorage.removeItem("scan");
+}
+
+
+function resetMini() {
+    var header = document.getElementById("mini-header").innerHTML = ""
+    var mini = document.getElementById("mini-para").innerHTML = "";
+    close();
 }
