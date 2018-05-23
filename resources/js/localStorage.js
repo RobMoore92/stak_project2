@@ -171,13 +171,12 @@ function loadProject() {
     var new_due = localStorage.getItem("due_date");
     var title = document.getElementById('title1');
     var due = document.getElementById('due_date1');
-    if (new_title === "") {
+    if (new_title === null) {
         title.innerHTML = "No title has been set";
     } else {
         title.innerHTML += new_title;
     }
-
-    if (new_due === "") {
+    if (new_due === null) {
         due.innerHTML = 'No due date has been set';
     } else {
         due.innerHTML += new_due;
