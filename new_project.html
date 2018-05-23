@@ -12,7 +12,7 @@
     <script src="resources/js/localStorage.js"></script>
     <!-- Bootstrap core CSS -->
     <link href="venders/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-
+    <link href='venders/css/animate.css' rel="stylesheet">
     <!-- Custom Style -->
     <link href='resources/css/main.css' rel="stylesheet">
 
@@ -53,20 +53,20 @@
         </div>
     </nav>
     <div class="container">
-        <h2>New Project</h2>
+        <h2 class="animated slideInLeft">New Project</h2>
         <div class="line-break"></div>
     </div>
     <div class="container">
         <form action="requirements_page.html" onsubmit="saveProject()">
-            <div class="form-group title">
+            <div class="form-group title animated fadeIn">
                 <label for="title">Title:</label>
                 <input type="text" class="form-control" id="title" placeholder="e.g Assignment 2">
             </div>
-            <div class="form-group">
+            <div class="form-group animated fadeIn">
                 <label for="due_date">Due:</label>
                 <input type="date" class="form-control" id="due_date">
             </div>
-            <div class="form-group">
+            <div class="form-group animated fadeIn">
                 <label for="type">Type:</label>
                 <select class="custom-select" id="type" placeholder=>
         <option selected>Select a type</option>
@@ -76,7 +76,7 @@
 
             </div>
                 <div class="form-group">
-            <button type="submit" class="btn btn-primary mt-4">Save</button>
+            <button type="submit" class="btn btn-primary mt-4 animated slideInUp">Save</button>
   </div>
         </form>
  <div class="row">

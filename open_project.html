@@ -12,7 +12,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="venders/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-
+    <link href='venders/css/animate.css' rel="stylesheet">
     <!-- Custom Style -->
     <link href='resources/css/main.css' rel="stylesheet">
     <script src="resources/js/localStorage.js"></script>
@@ -54,11 +54,11 @@
         </div>
     </nav>
     <div class="container">
-        <h2>Choose Option</h2>
+        <h2 class="animated slideInLeft">Choose Option</h2>
         <div class="line-break"></div>
-        <a href="project_main.html"><button type="button" id="loadFileXml" onclick="document.getElementById('file1').click();" class="btn btn-outline-dark btn-lg btn-block mt-3">Open File</button></a>
+        <a href="project_main.html"><button type="button" id="loadFileXml" onclick="document.getElementById('file1').click();" class="btn btn-outline-dark btn-lg btn-block mt-3 animated slideInUp">Open File</button></a>
         <input type="file" style="display:none;" id="file1" name="image/*" capture="environment">
-        <a href="project_main.html"><button type="button" id="loadFileXml" onclick="scanOpen()" class="btn btn-outline-dark btn-lg btn-block mt-3">Scan File</button></a>
+        <a href="project_main.html"><button type="button" id="loadFileXml" onclick="scanOpen()" class="btn btn-outline-dark btn-lg btn-block mt-3 animated slideInUp">Scan File</button></a>
         <input type="file" style="display:none;" id="file" name="image/*">
 
     </div>
