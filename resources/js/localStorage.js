@@ -133,6 +133,7 @@ function addReferenceText() {
 function addReferenceUrl() {
     var url = document.getElementById('urlInput').value;
     var reference = localStorage.getItem('reference');
+    var referenceModel = document.getElementById('reference-url');
     var header = document.getElementById('mini-header');
     var para = document.getElementById('mini-para');
     var urlmini = document.getElementById('mini-url')
@@ -145,6 +146,7 @@ function addReferenceUrl() {
         header.innerHTML = "Reference Added";
         para.innerHTML = reference;
         urlmini.innerHTML = url;
+        referenceModel.innerHTML = url;
         
     } else {
         ding.play();
@@ -312,15 +314,19 @@ function summarize() {
     var ding = document.getElementById('ding');
     var header = document.getElementById('mini-header');
     var para = document.getElementById('mini-para');
+    var url = document.getElementById('mini-url');
     var textbox = document.getElementById('textbox');
     var texthigh = document.getSelection().toString()
-    if (texthigh.includes("auctions")) {
+    if (texthigh.includes("widely")) {
         hide_mini();
         header.innerHTML = "Summarized Text";
-        para.innerHTML = "There are two types of auctions: those in which the price starts out low and is gradually raised, and those in which the price starts out high and is gradually lowered.<br> Auctions can be conducted in open or closed formats. <br> Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount.<br> Auctions can be conducted in open or closed formats. <br><br>Though open auctions often result in higher sale prices, closed formats are sometimes preferred when privacy or the need for documentation is paramount." + "<br><br>" + "</span>";
+        para.innerHTML = "Population decreased dramatically - habitat loss, disease and competition from introduced species. <br><br> Six quoll species – all inhabit a different area.Northern quolls preferred environment is tropical. <br><br> Western quoll lives in an arid environment across the South-West of Australia." + "<br><br>" + "</span>";
     } else {
         hide_mini()
-        para.innerHTML = "You have not highlighted a paragraph, try selecting the example below";
+        header.innerHTML = "Summary did not work."
+        para.innerHTML = "You did not choose the example ";
+        url.innerHTML = " ";
+        
     }
 }
 
@@ -352,7 +358,7 @@ function retrieveScan() {
     if (scanLocal !== null) {
         hide_mini();
         var scan_header = document.getElementById("mini-header").innerHTML = "Scanned Text";
-        var scan = document.getElementById("mini-para").innerHTML = "Retrieved text from scan";
+        var scan = document.getElementById("mini-para").innerHTML = "Usability refers to the ease of access and/or use of a product or website. It’s a sub-discipline of user experience design. Although user experience design (UX Design) and usability were once used interchangeably, we must now understand that usability provides an important contribution to UX; however, it’s not the whole of the experience. We can accurately measure usability. We can measure usability throughout the development process, from wireframes to prototypes to the final deliverable. Testing can be done with paper and pencil but also remotely when we have higher-fidelity prototypes.";
 
     }
     localStorage.removeItem("scan");
